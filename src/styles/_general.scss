@@ -1,0 +1,45 @@
+* {
+  font-family: $font-family;
+}
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: toRem(20);
+  font-weight: 700;
+}
+.container {
+  padding-inline: toRem(32);
+}
+.page {
+  background-color: $color-white;
+  padding-block: toRem(16);
+  min-height: calc(100vh - toRem(162));
+}
+
+@media screen and (min-width: $md) {
+  h1 {
+    font-size: toRem(22);
+  }
+}
+
+@media screen and (min-width: $lg) {
+  h1 {
+    font-size: toRem(24);
+  }
+}
+
+@media screen and (min-width: $xl) {
+  h1 {
+    font-size: toRem(26);
+  }
+}
+
+@media screen and (min-width: $xxl) {
+  h1 {
+    font-size: toRem(28);
+  }
+}

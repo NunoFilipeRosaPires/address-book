@@ -1,3 +1,7 @@
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="homepage">
+      <div className="container">Home</div>
+    </div>
+  );
 };
