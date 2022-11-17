@@ -4,7 +4,7 @@ export const Card = (props: CardProps) => {
   const { user } = props;
   console.log(user);
   return (
-    <div className="card">
+    <button className="card">
       <div className="card-thumbnail">
         <img
           src={user.picture.thumbnail}
@@ -23,6 +23,6 @@ export const Card = (props: CardProps) => {
         {/* <div className="card-content__username">{user.login.username}</div> */}
         <div className="card-content__email">{user.email}</div>
       </div>
-    </div>
+    </button>
   );
 };

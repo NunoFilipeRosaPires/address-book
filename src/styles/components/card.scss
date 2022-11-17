@@ -4,7 +4,7 @@
   align-items: center;
   gap: toRem(32);
   border-bottom: 1px solid $color-gray-1;
-  cursor: pointer;
+  width: 100%;
   &:hover {
     background-color: $color-gray-1;
   }
@@ -33,6 +33,7 @@
       font-size: toRem(14);
       color: $color-gray-3;
       padding-top: toRem(4);
+      text-align: left;
     }
   }
 }

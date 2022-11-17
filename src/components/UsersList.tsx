@@ -13,16 +13,21 @@ export const UsersList = () => {
 
   const dispatch = useDispatch<any>();
 
-  const { usersList, usersListLoaded } = useSelector(
-    (state: ApplicationState) => state.USERS
-  );
+  const { usersList, usersListLoaded } = useSelector((state: ApplicationState) => state.USERS);
 
   const [searchInput, setSearchInput] = useState<string>("");
   const [page, setPage] = useState<number>(1);
 
+  const getUsersBySearch = () => {
+    if (!searchInput) return usersList;
+    return usersList.filter((user: IUser) => {
+      const name = user.name.first.toLowerCase() + " " + user.name.last.toLowerCase();
+      return name.includes(searchInput.toLowerCase());
+    });
+  };
+
   useLayoutEffect(() => {
-    if (usersList.length < maxUsers)
-      dispatch(getUsersList({ batchSize: batchSize, page: page }));
+    if (usersList.length < maxUsers) dispatch(getUsersList({ batchSize: batchSize, page: page }));
   }, [page]);
 
   return (
@@ -30,9 +35,7 @@ export const UsersList = () => {
       <div className="users-list__search">
         <input
           value={searchInput}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setSearchInput(e.target.value)
-          }
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchInput(e.target.value)}
           placeholder="Search Users..."
         />
         <button>
@@ -40,7 +43,7 @@ export const UsersList = () => {
         </button>
       </div>
       <div className="users-list__content">
-        {usersList.map((user: IUser) => {
+        {getUsersBySearch().map((user: IUser) => {
           return <Card user={user} />;
         })}
       </div>
