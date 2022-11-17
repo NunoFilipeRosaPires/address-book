@@ -1,7 +1,9 @@
+import { UsersList } from "../components";
+
 export const Home = () => {
   return (
     <div className="homepage">
-      <div className="container">Home</div>
+      <UsersList />
     </div>
   );
 };

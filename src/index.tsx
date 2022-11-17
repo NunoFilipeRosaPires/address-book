@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import store from "./store";
+import { store } from "./store";
 import { Provider } from "react-redux";
 import { RouteConfig } from "./routes/RouteConfig";
 import "./styles/index.scss";

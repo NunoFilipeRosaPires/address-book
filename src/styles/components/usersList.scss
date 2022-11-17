@@ -1,0 +1,45 @@
+.users-list {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - toRem(130));
+  overflow: hidden;
+  &__search {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: toRem(64);
+    padding-inline: toRem(16);
+    border-bottom: 1px solid $color-gray-1;
+    background-color: $color-gray-1;
+    input {
+      flex: 1;
+      background-color: $color-gray-2;
+      padding: toRem(12) toRem(16);
+      border-radius: 10px;
+    }
+    button {
+      color: $color-gray-3;
+      width: toRem(64);
+      height: 100%;
+    }
+  }
+  &__content {
+    overflow-y: auto;
+    height: calc(100% - toRem(64));
+  }
+}
+
+@media screen and (min-width: $md) {
+  .users-list {
+    width: 35%;
+    border-left: 1px solid $color-gray-1;
+    border-right: 1px solid $color-gray-1;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .users-list {
+    width: 30%;
+  }
+}

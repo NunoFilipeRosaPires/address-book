@@ -1,15 +1,16 @@
 nav {
   background-color: $color-white;
   height: toRem(64);
-  border-bottom: 1px solid $color-gray-1;
   position: relative;
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    border-bottom: 1px solid $color-gray-1;
     a {
       color: $color-primary;
+      padding-inline: toRem(16);
       svg {
         color: $color-quaternary;
         font-size: toRem(20);
