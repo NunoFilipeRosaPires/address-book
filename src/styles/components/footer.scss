@@ -1,16 +1,15 @@
 footer {
-  background-color: $color-white;
-  border-top: 1px solid $color-gray-1;
-  height: toRem(64);
+  background-color: $color-gray-2;
+  height: toRem(48);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $color-gray-3;
-  font-size: toRem(14);
+  color: $color-gray-4;
+  font-size: toRem(12);
 }
 
 @media screen and (min-width: $md) {
   footer {
-    font-size: toRem(16);
+    font-size: toRem(14);
   }
 }

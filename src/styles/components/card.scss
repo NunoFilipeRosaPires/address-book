@@ -14,24 +14,29 @@
   }
   &-content {
     flex: 1;
+    min-width: 0;
     &__user {
       display: flex;
+      gap: toRem(8);
       justify-content: space-between;
       width: 100%;
+      text-align: left;
       &-name {
         font-size: toRem(18);
         font-weight: bold;
-        color: $color-primary;
+        color: $color-black;
       }
       &-username {
+        @include linelimit(1);
         font-size: toRem(12);
         color: rgba($color-primary, 0.75);
         padding-top: toRem(4);
       }
     }
     &__email {
+      @include linelimit(1);
       font-size: toRem(14);
-      color: $color-gray-3;
+      color: $color-gray-4;
       padding-top: toRem(4);
       text-align: left;
     }
