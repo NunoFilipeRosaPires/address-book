@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import reducer from "./ducks/rootReducer";
-import { IUserState } from "./ducks/users/type";
+import { IUserState } from "./ducks/users/types";
 
 export interface ApplicationState {
   USERS: IUserState;

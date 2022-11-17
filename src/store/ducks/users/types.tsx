@@ -10,6 +10,7 @@ export interface IUser {
   gender: "male" | "female";
   id: IUserId;
   location: ILocation;
+  login: ILogin;
   name: IUserName;
   nat: string;
   phone: string;
@@ -35,6 +36,16 @@ interface ILocation {
   state: string;
   street: IStreetAddress;
   timezone: ITimezone;
+}
+
+interface ILogin {
+  md5: string;
+  password: string;
+  salt: string;
+  sha1: string;
+  sha256: string;
+  username: string;
+  uuid: string;
 }
 
 interface ICoordinates {

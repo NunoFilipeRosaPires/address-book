@@ -11,10 +11,9 @@
     height: toRem(64);
     padding-inline: toRem(16);
     border-bottom: 1px solid $color-gray-1;
-    background-color: $color-gray-1;
     input {
       flex: 1;
-      background-color: $color-gray-2;
+      background-color: $color-gray-1;
       padding: toRem(12) toRem(16);
       border-radius: 10px;
     }
@@ -33,7 +32,6 @@
 @media screen and (min-width: $md) {
   .users-list {
     width: 35%;
-    border-left: 1px solid $color-gray-1;
     border-right: 1px solid $color-gray-1;
   }
 }

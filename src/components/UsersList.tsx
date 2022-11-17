@@ -4,7 +4,7 @@ import { ChangeEvent, useLayoutEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ApplicationState } from "../store";
 import { getUsersList } from "../store/ducks/users/thunks";
-import { IUser } from "../store/ducks/users/type";
+import { IUser } from "../store/ducks/users/types";
 import { Card } from "./Card";
 
 export const UsersList = () => {
@@ -41,7 +41,7 @@ export const UsersList = () => {
       </div>
       <div className="users-list__content">
         {usersList.map((user: IUser) => {
-          return <Card {...user} />;
+          return <Card user={user} />;
         })}
       </div>
     </div>

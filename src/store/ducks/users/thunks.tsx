@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { getUsersListProps } from "./type";
+import { getUsersListProps } from "./types";
 
 export const getUsersList = createAsyncThunk(
   "getList",

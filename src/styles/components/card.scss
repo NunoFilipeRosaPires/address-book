@@ -1,0 +1,38 @@
+.card {
+  padding: toRem(16);
+  display: flex;
+  align-items: center;
+  gap: toRem(32);
+  border-bottom: 1px solid $color-gray-1;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-gray-1;
+  }
+  &-thumbnail > img {
+    border-radius: 50%;
+    border: 1px solid $color-gray-1;
+  }
+  &-content {
+    flex: 1;
+    &__user {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &-name {
+        font-size: toRem(18);
+        font-weight: bold;
+        color: $color-primary;
+      }
+      &-username {
+        font-size: toRem(12);
+        color: rgba($color-primary, 0.75);
+        padding-top: toRem(4);
+      }
+    }
+    &__email {
+      font-size: toRem(14);
+      color: $color-gray-3;
+      padding-top: toRem(4);
+    }
+  }
+}
