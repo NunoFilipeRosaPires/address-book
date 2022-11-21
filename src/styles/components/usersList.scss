@@ -26,18 +26,34 @@
   &__content {
     overflow-y: auto;
     height: calc(100% - toRem(64));
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: $color-gray-1;
+    gap: 1px;
+  }
+}
+
+@media screen and (min-width: $sm) {
+  .users-list__content {
+    grid-template-columns: repeat(2, calc(50% - 1px));
   }
 }
 
 @media screen and (min-width: $md) {
-  .users-list {
-    width: 35%;
-    border-right: 1px solid $color-gray-1;
+  .users-list__content {
+    grid-template-columns: repeat(3, calc(100% / 3 - 1px));
   }
 }
 
 @media screen and (min-width: $xl) {
   .users-list {
     width: 30%;
+    &__search {
+      border-right: 1px solid $color-gray-1;
+    }
+    &__content {
+      grid-template-columns: 1fr;
+    }
   }
 }

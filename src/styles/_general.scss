@@ -33,7 +33,7 @@ h1 {
 }
 .page {
   background-color: $color-white;
-  min-height: calc(100vh - toRem(132));
+  height: calc(100vh - toRem(114));
 }
 
 //scrollbar

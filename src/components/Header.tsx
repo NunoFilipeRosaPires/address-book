@@ -9,7 +9,7 @@ export const Header = () => {
         <Link to="/">
           <h1>Address Book</h1>
         </Link>
-        <Link to="/settings">
+        <Link to="/settings" aria-label="Settings button">
           <FontAwesomeIcon icon={faGear} />
         </Link>
       </div>

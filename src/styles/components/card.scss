@@ -1,10 +1,11 @@
 .card {
-  padding: toRem(16);
-  display: flex;
-  align-items: center;
-  gap: toRem(32);
-  border-bottom: 1px solid $color-gray-1;
+  padding: toRem(24) toRem(32) toRem(16);
   width: 100%;
+  display: flex;
+  gap: toRem(16);
+  flex-direction: row;
+  align-items: center;
+  background-color: $color-white;
   &:hover {
     background-color: $color-gray-1;
   }
@@ -15,30 +16,71 @@
   &-content {
     flex: 1;
     min-width: 0;
+    max-width: 100%;
     &__user {
       display: flex;
       gap: toRem(8);
       justify-content: space-between;
       width: 100%;
-      text-align: left;
+      text-align: center;
       &-name {
         font-size: toRem(18);
         font-weight: bold;
         color: $color-black;
+        text-align: left;
       }
       &-username {
         @include linelimit(1);
         font-size: toRem(12);
         color: rgba($color-primary, 0.75);
         padding-top: toRem(4);
+        position: relative;
       }
     }
     &__email {
       @include linelimit(1);
       font-size: toRem(14);
-      color: $color-gray-4;
+      color: rgba($color-black, 0.54);
       padding-top: toRem(4);
       text-align: left;
+    }
+  }
+}
+
+@media screen and (min-width: $sm) {
+  .card {
+    padding: toRem(32);
+    display: block;
+    &-content {
+      &__user {
+        flex-direction: column;
+        gap: toRem(8);
+        &-name {
+          text-align: center;
+        }
+      }
+      &__email {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .card {
+    padding: toRem(24) toRem(16) toRem(16);
+    display: flex;
+    gap: toRem(16);
+    &-content {
+      &__user {
+        flex-direction: row;
+        &-name {
+          text-align: left;
+        }
+      }
+      &__email {
+        text-align: left;
+      }
     }
   }
 }

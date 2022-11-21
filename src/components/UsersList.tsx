@@ -28,6 +28,7 @@ export const UsersList = () => {
 
   useLayoutEffect(() => {
     if (usersList.length < maxUsers) dispatch(getUsersList({ batchSize: batchSize, page: page }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   return (
@@ -38,13 +39,13 @@ export const UsersList = () => {
           onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchInput(e.target.value)}
           placeholder="Search Users..."
         />
-        <button>
+        <button aria-label="Search button">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>
       <div className="users-list__content">
-        {getUsersBySearch().map((user: IUser) => {
-          return <Card user={user} />;
+        {getUsersBySearch().map((user: IUser, index: number) => {
+          return <Card user={user} key={index} />;
         })}
       </div>
     </div>

@@ -11,6 +11,9 @@ nav {
     a {
       color: $color-primary;
       padding-inline: toRem(16);
+      &:last-of-type {
+        padding-block: toRem(16);
+      }
       svg {
         color: $color-quaternary;
         font-size: toRem(20);
