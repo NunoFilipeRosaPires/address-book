@@ -13,7 +13,6 @@ export const Card = (props: CardProps) => {
           <div className="card-content__user-name">{user.name.first + " " + user.name.last}</div>
           <div className="card-content__user-username">{user.login.username}</div>
         </div>
-        {/* <div className="card-content__username">{user.login.username}</div> */}
         <div className="card-content__email">{user.email}</div>
       </div>
     </button>

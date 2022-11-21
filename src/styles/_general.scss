@@ -34,6 +34,7 @@ h1 {
 .page {
   background-color: $color-white;
   height: calc(100vh - toRem(114));
+  background-color: $color-gray-1;
 }
 
 //scrollbar

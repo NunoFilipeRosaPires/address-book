@@ -10,16 +10,31 @@ const initialState: IUserState = {
 const usersSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    clearUsersList: (state) => {
+      return {
+        ...state,
+        usersList: initialState.usersList,
+        usersListLoaded: initialState.usersListLoaded,
+      };
+    },
+  },
   extraReducers: (builder) => {
+    builder.addCase(getUsersList.pending, (state) => {
+      return {
+        ...state,
+        usersListLoaded: false,
+      };
+    });
     builder.addCase(getUsersList.fulfilled, (state, action) => {
       return {
         ...state,
-        usersList: action.payload,
+        usersList: state.usersList.concat(action.payload),
         usersListLoaded: true,
       };
     });
   },
 });
 
+export const { clearUsersList } = usersSlice.actions;
 export default usersSlice.reducer;

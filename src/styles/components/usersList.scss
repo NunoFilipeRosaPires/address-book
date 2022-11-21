@@ -1,16 +1,22 @@
 .users-list {
   width: 100%;
   position: relative;
-  height: calc(100vh - toRem(114));
+  max-height: calc(100vh - toRem(114));
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  & > div {
+    width: 100%;
+  }
   &__search {
     @extend .container;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: toRem(64);
-    padding-inline: toRem(16);
+    padding: toRem(16);
     border-bottom: 1px solid $color-gray-1;
+    background-color: $color-white;
     input {
       flex: 1;
       background-color: $color-gray-1;
@@ -25,23 +31,36 @@
   }
   &__content {
     overflow-y: auto;
-    height: calc(100% - toRem(64));
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+
     background-color: $color-gray-1;
-    gap: 1px;
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 1px;
+    }
   }
 }
 
+.loading {
+  padding: toRem(32);
+  text-align: center;
+  background-color: $color-white;
+  font-size: toRem(12);
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: $color-terciary;
+  border-top: 1px solid $color-gray-1;
+}
+
 @media screen and (min-width: $sm) {
-  .users-list__content {
+  .users-list__content-grid {
     grid-template-columns: repeat(2, calc(50% - 1px));
   }
 }
 
 @media screen and (min-width: $md) {
-  .users-list__content {
+  .users-list__content-grid {
     grid-template-columns: repeat(3, calc(100% / 3 - 1px));
   }
 }
@@ -52,7 +71,7 @@
     &__search {
       border-right: 1px solid $color-gray-1;
     }
-    &__content {
+    &__content-grid {
       grid-template-columns: 1fr;
     }
   }
