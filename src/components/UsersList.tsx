@@ -30,26 +30,31 @@ export const UsersList = () => {
     });
   };
 
+  useLayoutEffect(() => {
+    if (usersList.length < maxUsers) dispatch(getUsersList({ batchSize: batchSize, page: page }));
+    else setReachedLimit(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
   useEffect(() => {
     const nextPageData = () => {
       const child = listRef.current.children[0];
       const childRect = child.getBoundingClientRect();
       if (childRect.height + childRect.top < window.innerHeight && usersListLoaded && searchInput === "") setPage(page + 1);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     };
 
-    listRef.current.addEventListener("scroll", nextPageData);
+    const listElement = listRef.current;
 
-    return () => listRef.current.removeEventListener("scroll", nextPageData);
+    listElement.addEventListener("scroll", nextPageData);
+
+    return () => listElement.removeEventListener("scroll", nextPageData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, usersListLoaded, searchInput]);
 
-  useLayoutEffect(() => {
-    if (usersList.length < maxUsers) dispatch(getUsersList({ batchSize: batchSize, page: page }));
-    else setReachedLimit(true);
-  }, [page]);
-
   useEffect(() => {
     return () => dispatch(clearUsersList());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

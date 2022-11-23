@@ -31,7 +31,6 @@
   }
   &__content {
     overflow-y: auto;
-
     background-color: $color-gray-1;
     &-grid {
       display: grid;
@@ -41,7 +40,6 @@
     }
   }
 }
-
 .loading {
   padding: toRem(32);
   text-align: center;
@@ -49,7 +47,7 @@
   font-size: toRem(12);
   letter-spacing: 2px;
   font-weight: 600;
-  color: $color-terciary;
+  color: $color-gray-5;
   border-top: 1px solid $color-gray-1;
 }
 
