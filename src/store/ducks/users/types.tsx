@@ -1,6 +1,7 @@
 export interface IUserState {
   usersList: IUser[];
   usersListLoaded: boolean;
+  user?: IUser;
 }
 
 export interface IUser {

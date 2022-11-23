@@ -5,6 +5,7 @@ import { IUserState } from "./types";
 const initialState: IUserState = {
   usersList: [],
   usersListLoaded: false,
+  user: undefined,
 };
 
 const usersSlice = createSlice({
@@ -16,6 +17,12 @@ const usersSlice = createSlice({
         ...state,
         usersList: initialState.usersList,
         usersListLoaded: initialState.usersListLoaded,
+      };
+    },
+    setUserDetails: (state, action) => {
+      return {
+        ...state,
+        user: action.payload,
       };
     },
   },
@@ -36,5 +43,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { clearUsersList } = usersSlice.actions;
+export const { clearUsersList, setUserDetails } = usersSlice.actions;
 export default usersSlice.reducer;

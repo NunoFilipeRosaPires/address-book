@@ -27,6 +27,15 @@ h1 {
   font-size: toRem(20);
   font-weight: 700;
 }
+h2 {
+  font-size: toRem(18);
+  font-weight: 100;
+  color: $color-gray-3;
+  border-bottom: 1px solid $color-gray-1;
+}
+.App {
+  overflow: hidden;
+}
 .container {
   max-width: toRem(1600);
   margin-inline: auto;
