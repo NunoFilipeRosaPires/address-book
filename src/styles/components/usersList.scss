@@ -9,7 +9,7 @@
     width: 100%;
   }
   &__search {
-    @extend .container;
+    width: calc(100% - toRem(33)) !important;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -80,12 +80,12 @@ export const UserDetails = () => {
             <div className="user-details__header-user">
               <div className="user-details__header-user--name">{user?.name.first + " " + user?.name.last}</div>
               <div className="user-details__header-user--username">{user?.login.username}</div>
-              <div className="user-details__header-tags">
-                <div className="gender">{user?.gender}</div>
-                <div className="age">{user?.dob.age}</div>
-                <div className="country">{user?.location.country}</div>
-              </div>
             </div>
+          </div>
+          <div className="user-details__header-tags">
+            <div className="gender">{user?.gender}</div>
+            <div className="age">{user?.dob.age}</div>
+            <div className="country">{user?.location.country}</div>
           </div>
           <div className="user-details__basic">
             <h2>Basic Details</h2>

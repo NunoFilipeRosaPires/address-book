@@ -129,9 +129,28 @@
     position: relative;
     width: 70%;
     left: 0;
+    padding: toRem(32);
     transition: all 0s;
     &__back-btn {
       display: none;
+    }
+    &__header {
+      flex-direction: row;
+      &-user {
+        &--name {
+          font-size: toRem(28);
+          text-align: left;
+        }
+        &--username {
+          font-size: toRem(18);
+          padding-top: toRem(8);
+          text-align: left;
+        }
+      }
+      &-tags {
+        justify-content: flex-start;
+        margin-top: toRem(32);
+      }
     }
   }
 }
