@@ -79,4 +79,5 @@ interface IImage {
 export interface getUsersListProps {
   batchSize: number;
   page: number;
+  nationalities: string;
 }

@@ -1,0 +1,85 @@
+.settings {
+  padding: toRem(32) toRem(16);
+  background-color: $color-white;
+  height: calc(100vh - toRem(114));
+  max-height: calc(100% - toRem(64));
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  a {
+    position: absolute;
+    top: toRem(16);
+    left: toRem(16);
+    color: $color-gray-5;
+    font-size: toRem(24);
+  }
+  &__header {
+    &-title {
+      color: $color-quaternary;
+      font-size: toRem(18);
+      font-weight: 600;
+      border-bottom: 0;
+      text-align: center;
+    }
+    &-label {
+      color: $color-gray-4;
+      font-size: toRem(14);
+      line-height: 1.5;
+      border-bottom: 0;
+      margin-top: toRem(64);
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(16);
+    padding-top: toRem(32);
+    &-item {
+      width: toRem(176);
+      padding: toRem(24) toRem(32);
+      text-align: center;
+      background-color: $color-white;
+      border-radius: 15px;
+      border: 1px solid $color-white;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      &::after {
+        content: "";
+        position: absolute;
+        width: toRem(16);
+        height: toRem(16);
+        top: toRem(8);
+        right: toRem(8);
+        background-color: $color-gray-2;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+      &--flag {
+        img {
+          width: toRem(32);
+          height: toRem(32);
+        }
+      }
+      &--name {
+        font-size: toRem(14);
+        color: $color-quaternary;
+        font-weight: 600;
+        margin-top: toRem(8);
+      }
+      &.active {
+        border: 1px solid $color-primary;
+        box-shadow: 0 2px 5px rgba($color-primary, 0.2);
+        &::after {
+          background-color: rgba($color-primary, 0.5);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $xl) {
+  .settings {
+    padding: toRem(32);
+  }
+}

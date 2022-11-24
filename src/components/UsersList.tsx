@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ApplicationState } from "../store";
+import { INationality } from "../store/ducks/settings/types";
 import { clearUsersList } from "../store/ducks/users";
 import { getUsersList } from "../store/ducks/users/thunks";
 import { IUser } from "../store/ducks/users/types";
@@ -17,6 +18,7 @@ export const UsersList = () => {
   const listRef = useRef<any>();
 
   const { usersList, usersListLoaded } = useSelector((state: ApplicationState) => state.USERS);
+  const { nationalities } = useSelector((state: ApplicationState) => state.SETTINGS);
 
   const [searchInput, setSearchInput] = useState<string>("");
   const [page, setPage] = useState<number>(1);
@@ -31,7 +33,14 @@ export const UsersList = () => {
   };
 
   useLayoutEffect(() => {
-    if (usersList.length < maxUsers) dispatch(getUsersList({ batchSize: batchSize, page: page }));
+    if (usersList.length < maxUsers)
+      dispatch(
+        getUsersList({
+          batchSize: batchSize,
+          page: page,
+          nationalities: nationalities.map((nat: INationality) => nat.abbreviation).join(","),
+        })
+      );
     else setReachedLimit(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);

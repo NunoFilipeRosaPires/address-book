@@ -26,12 +26,15 @@ button {
 h1 {
   font-size: toRem(20);
   font-weight: 700;
+  margin: 0;
 }
 h2 {
   font-size: toRem(18);
   font-weight: 100;
   color: $color-gray-3;
   border-bottom: 1px solid $color-gray-1;
+  margin: 0;
+  margin-bottom: toRem(16);
 }
 .App {
   overflow: hidden;
@@ -44,6 +47,7 @@ h2 {
   background-color: $color-white;
   height: calc(100vh - toRem(114));
   background-color: $color-gray-1;
+  position: relative;
 }
 
 //scrollbar

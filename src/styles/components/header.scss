@@ -8,9 +8,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    padding-inline: toRem(16);
+    max-width: toRem(1600);
+    margin-inline: auto;
     a {
       color: $color-primary;
-      padding-inline: toRem(16);
       &:last-of-type {
         padding-block: toRem(16);
       }

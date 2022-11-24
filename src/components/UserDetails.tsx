@@ -51,6 +51,7 @@ export const UserDetails = () => {
 
   useEffect(() => {
     if (user) setIsOpened(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export const UserDetails = () => {
     };
     window.addEventListener("resize", checkMobileScreen);
     return () => window.removeEventListener("resize", checkMobileScreen);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
