@@ -13,6 +13,7 @@ export interface ApplicationState {
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ["SETTINGS"],
 };
 const persistedReducer = persistReducer(persistConfig, reducer);
 
